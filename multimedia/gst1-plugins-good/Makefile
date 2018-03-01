@@ -123,6 +123,8 @@ CONFIGURE_ARGS += \
 	--without-libintl-prefix \
 	--without-x \
 
+TARGET_CFLAGS+= -O0
+
 EXTRA_LDFLAGS+= \
 	-Wl,-rpath-link=$(STAGING_DIR)/usr/lib \
 	$(if $(ICONV_FULL),-liconv) \

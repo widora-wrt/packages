@@ -114,7 +114,6 @@ CONFIGURE_ARGS += \
 	--disable-dts \
 	--disable-resindvd \
 	--disable-faac \
-	--disable-faad \
 	--disable-fbdev \
 	--disable-flite \
 	--disable-gsm \
@@ -123,7 +122,6 @@ CONFIGURE_ARGS += \
 	--disable-lv2 \
 	--disable-modplug \
 	--disable-mimic \
-	--disable-libmms \
 	--disable-mpeg2enc \
 	--disable-mplex \
 	--disable-musepack \
@@ -269,6 +267,8 @@ $(eval $(call GstBuildPlugin,siren,siren support,audio rtp,,))
 $(eval $(call GstBuildPlugin,speed,speed support,audio,,))
 $(eval $(call GstBuildPlugin,subenc,subenc support,controller,,))
 #$(eval $(call GstBuildPlugin,srtp,srtp support,rtp,,+libsrtp))
+$(eval $(call GstBuildPlugin,faad,aac decoding support,audio,,+faad2))
+$(eval $(call GstBuildPlugin,mms,mms support,audio tag,,+libmms))
 
 $(eval $(call BuildPackage,gstreamer1-plugins-bad))
 $(eval $(call BuildPackage,gst1-plugins-bad))

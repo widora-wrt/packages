@@ -36,7 +36,7 @@ PKG_CONFIG_DEPENDS:= \
 	CONFIG_PACKAGE_gst1-mod-videoconvert \
 	CONFIG_PACKAGE_gst1-mod-videotestsrc \
 	CONFIG_PACKAGE_gst1-mod-volume \
-	CONFIG_PACKAGE_gst1-mod-vorbis \
+	CONFIG_PACKAGE_gst1-mod-ivorbisdec \
 	CONFIG_PACKAGE_libgst1app \
 
 PKG_FIXUP:=autoreconf
@@ -138,7 +138,8 @@ CONFIGURE_ARGS += \
 	$(call GST_COND_SELECT,videoconvert) \
 	$(call GST_COND_SELECT,videotestsrc) \
 	$(call GST_COND_SELECT,volume) \
-	$(call GST_COND_SELECT,vorbis) \
+	--enable-ivorbis \
+	--disable-vorbis \
 	--disable-x \
 	--disable-xshm \
 	--disable-xvideo \
@@ -283,7 +284,7 @@ $(eval $(call GstBuildPlugin,videorate,Adjusts video frames,video,,))
 $(eval $(call GstBuildPlugin,videoscale,Resizes video,video,,))
 $(eval $(call GstBuildPlugin,videotestsrc,video test,video,,+liboil))
 $(eval $(call GstBuildPlugin,volume,volume,audio controller,,+liboil))
-$(eval $(call GstBuildPlugin,vorbis,Vorbis,audio tag,ogg,+libvorbis))
+$(eval $(call GstBuildPlugin,ivorbisdec,Vorbis,audio tag,ogg,+libvorbisidec))
 
 $(eval $(call BuildPackage,gstreamer1-plugins-base))
 $(eval $(call BuildPackage,gst1-plugins-base))
