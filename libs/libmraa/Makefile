@@ -8,14 +8,14 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=libmraa
-PKG_VERSION:=0.8.0
+PKG_VERSION:=0.8.8
 
 PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://github.com/intel-iot-devkit/mraa.git
+PKG_SOURCE_URL:=https://github.com/widora-wrt/mraa.git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_VERSION:=70600dece4138b0c0dbaff42f57828f1559cd840
+PKG_SOURCE_VERSION:=a11bd322015f62dad77b6b012a48239eca9f3d1d
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 PKG_BUILD_DEPENDS:=node python/host swig/host node/host
 CMAKE_INSTALL:=1
